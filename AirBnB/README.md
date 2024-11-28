@@ -1,4 +1,4 @@
-# Airbnb Cape Town Data Analysis
+# Cape Town Airbnb Insights
 
 ## Problem Statement
 
