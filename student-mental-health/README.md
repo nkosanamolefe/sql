@@ -16,4 +16,4 @@ Acculturative stress: stress associated with learning about and integrating into
 
 The [data](https://www.mdpi.com/2306-5729/4/3/124/s1) is in one table that includes all of the survey data. There are 50 fields and, according to the paper, 268 records. Each row is a student.
 
-[View EDA SQL Script](student-mental-health/analyzing students mental health.ipynb)
+[View EDA SQL Script](analyzing students mental health.ipynb)
