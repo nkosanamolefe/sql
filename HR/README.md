@@ -1,95 +1,34 @@
-# Data Cleaning Queries for HR
+# HR Data Analysis Project Overview
 
-## Introduction
+## Project Overview
 
-This document outlines the SQL queries used for cleaning and preparing data within the "hrproject" database. This cleaning process was essential for ensuring data consistency and accuracy prior to further analysis in my data analysis project portfolio.
+This project analyzed a [dataset](https://github.com/nkosanamolefe/sql/blob/main/HR/human_resources.csv) of HR employee information spanning from 2000 to 2020, containing over 22,000 records. The primary goal was to gain insights into various aspects of the company's workforce, including demographics, employment trends, and turnover.
 
-## Tools
+* Data Source: [Irene Nafula](https://github.com/Irene-arch/)
+* [View data cleaning SQL script](https://github.com/nkosanamolefe/sql/blob/main/HR/HR%20Data%20Cleaning.sql)
+* [View data EDA script](https://github.com/nkosanamolefe/sql/blob/main/HR/hr_EDA.ipynb)
 
-My-SQL
+## Data Cleaning & Analysis (MySQL Workbench and DataLab)
 
-## Data Cleaning Queries
+The raw data was imported into MySQL Workbench for cleaning and into DataLab for analysis.
 
-### 1. Database and Table Setup
+This involved several key steps:
 
-```sql
-CREATE DATABASE hrproject;
+* Data type conversion: Birthdate, hire date, and term date columns were standardized to the DATE format. Various date formats were handled using str_to_date and date_format.
+* Handling missing values: Term dates that were blank were updated to the current date for analysis of active employees.
+* Age calculation: An `age`column was calculated using the TIMESTAMPDIFF function based on the birthdate.
+* Data Quality: Identified and handled data inconsistencies, such as negative ages (likely data entry errors) and future term dates (which were assumed to be incorrect or for planned future terminations). These were excluded from relevant analyses to avoid skewing results. Specifically, records with ages less than 18 and term dates in the future were filtered out.
 
-USE hrprojects;
-```
+## Summary of Findings
 
-### Description
+The analysis revealed several key insights:
 
-* Creates a new database named "hrproject" and switches the context to use this database.
-
-### 2. Import the data and conduct the initial Data Exploration
-
-```sql
-SQL
-SELECT * FROM hr;
-DESCRIBE hr;
-```
-
-### Description
-
-* After creating the `DATABASE` right click *Tables* inside the 'hrprojects' and import the CSV data
-* `SELECT * FROM hr;` displays the entire content of the 'hr' table, providing an initial overview of the data.
-* `DESCRIBE hr;` displays the table's structure, including column names, data types, and nullability.
-
-### 3. Renaming the 'id' Column
-
-```sql
-ALTER TABLE hr
-CHANGE COLUMN ï»¿id emp_id VARCHAR(20) NULL;
-```
-
-### Description
-
-* Renames the 'ï»¿id' column to 'emp_id' for better clarity within the HR context.
-
-### 4. Standardizing Date Formats
-
-```sql
-SET sql_safe_updates = 0; 
-
-UPDATE hr
-SET birthdate = CASE
-WHEN birthdate LIKE '%/%' THEN date_format(str_to_date(birthdate, '%m/%d/%Y'), '%Y-%m-%d')
-WHEN birthdate LIKE '%-%' THEN date_format(str_to_date(birthdate, '%m-%d-%Y'), '%Y-%m-%d')
-ELSE NULL
-END;
-
-ALTER TABLE hr
-MODIFY COLUMN birthdate DATE;
-
--- Similar update query for 'hire_date' column
-```
-
-### Description
-
-* Temporarily disables SQL safe updates for flexibility.
-* Updates 'birthdate' and 'hire_date' columns, converting inconsistent date formats to a standard YYYY-MM-DD format.
-* Uses `CASE` for conditional updates based on existing patterns.
-* Modifies the column data types to `DATE` for accurate date representation.
-
-### 5. Handling Missing and Outlier 'termdate' Values
-
-```sql
-UPDATE hr
-SET termdate = CASE 
-WHEN termdate = '' THEN CURDATE() ELSE date(str_to_date(termdate, '%Y-%m-%d %H:%i:%s UTC')) END
-WHERE termdate IS NOT NULL;
-
-ALTER TABLE hr
-MODIFY COLUMN termdate DATE;
-
-UPDATE hr 
-SET termdate = '1000-01-01'
-WHERE termdate = '2023-12-03'; 
-```
-
-### Description
-
-* Updates missing 'termdate' (termination date) values to the current date.
-* Converts string-represented 'termdate' values to the `DATE` format.
-* Replaces an outlier '2023-12-03' value, likely intended for far future representation, with '1000-01-01' (a common placeholder date).
+* The company has a higher proportion of male employees.
+* The largest employee age group is 35-44, followed by 25-34, with the smallest group being 55-64.
+* A significant majority of employees work at the headquarters.
+* The average employment length for terminated employees is approximately 8 years.
+* Gender distribution is fairly balanced across departments, although a slight male majority exists overall.
+* The Auditing department exhibits the highest turnover rate, while Support, Business Development, and Marketing have the lowest.
+* Ohio is the state with the largest number of employees.
+* The company's employee count has shown a net increase over time.
+* Average tenure across departments is around 8 years, with Sales having the highest and Product Management the lowest.
