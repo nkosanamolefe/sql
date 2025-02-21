@@ -9,11 +9,9 @@ The key analysis questions are:
 2. Potential customer list for AirBnB cleaning business?
 
 The [data](http://insideairbnb.com/get-the-data/) is divided into 3 tables:
-| Tables | Records | Fields |
-|---|---|---|
-| calender   | +786k   | 7   |
-| listings   | 20k     | 75  |
-| reviews    | +500k   | 6   |
+* *calender* has +786k records and 7 fields
+* *listings* has 20k records and 75 fields
+* *reviews* has +500k records and 6 fields
 
 ### Data Cleaning
 
@@ -49,9 +47,7 @@ The [data](http://insideairbnb.com/get-the-data/) is divided into 3 tables:
 
 * *Revenue Potential:* Based on current trends, the top 30 Airbnb earners are projected to generate an average revenue of R3,027,817.43
 
-* ##### Concentration by Location
-
-    The analysis indicates a concentration of top-earning listings in specific areas. Ward 54 leads with 23 listings within the top 30 earners
+* *Concentration by Location:* The analysis indicates a concentration of top-earning listings in specific areas. Ward 54 leads with 23 listings within the top 30 earners
 
 #### 2. Potential customer list for AirBnB cleaning business?
 
