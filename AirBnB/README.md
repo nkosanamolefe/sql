@@ -51,4 +51,4 @@ The [data](http://insideairbnb.com/get-the-data/) is divided into 3 tables:
 
 #### 2. Potential customer list for AirBnB cleaning business?
 
-* **Potential customer list:**The top 20 selected listings have an average of 9 reviews containing the word "dirty". This indicates a potential market demand for high-quality cleaning services among Airbnb hosts in Cape Town, who may be willing to outsource cleaning to maintain positive reviews and guest satisfaction.
+* **Potential customer list:** The top 20 selected listings have an average of 9 reviews containing the word "dirty". This indicates a potential market demand for high-quality cleaning services among Airbnb hosts in Cape Town, who may be willing to outsource cleaning to maintain positive reviews and guest satisfaction.
