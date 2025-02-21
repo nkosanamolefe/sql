@@ -9,9 +9,9 @@ The key analysis questions are:
 2. Potential customer list for AirBnB cleaning business?
 
 The [data](http://insideairbnb.com/get-the-data/) is divided into 3 tables:
-* *calender* has +786k records and 7 fields
-* *listings* has 20k records and 75 fields
-* *reviews* has +500k records and 6 fields
+* **calender** has +786k records and 7 fields
+* **listings** has 20k records and 75 fields
+* **reviews** has +500k records and 6 fields
 
 ### Data Cleaning
 
@@ -43,11 +43,11 @@ The [data](http://insideairbnb.com/get-the-data/) is divided into 3 tables:
 
 #### 1. How much are the top AirBnB earners making in Cape Town?
 
-* *Pricing of Top Earners:* The top 30 earners on Airbnb in Cape Town command an average nightly rate of R120,972.97
+* **Pricing of Top Earners:** The top 30 earners on Airbnb in Cape Town command an average nightly rate of R120,972.97
 
-* *Revenue Potential:* Based on current trends, the top 30 Airbnb earners are projected to generate an average revenue of R3,027,817.43
+* **Revenue Potential:** Based on current trends, the top 30 Airbnb earners are projected to generate an average revenue of R3,027,817.43
 
-* *Concentration by Location:* The analysis indicates a concentration of top-earning listings in specific areas. Ward 54 leads with 23 listings within the top 30 earners
+* **Concentration by Location:** The analysis indicates a concentration of top-earning listings in specific areas. Ward 54 leads with 23 listings within the top 30 earners
 
 #### 2. Potential customer list for AirBnB cleaning business?
 
