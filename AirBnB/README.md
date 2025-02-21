@@ -1,6 +1,6 @@
 # Cape Town Airbnb Insights
 
-### Project Overview
+## Project Overview
 
 This project aims to analyze Airbnb data from Cape Town, South Africa, to gain valuable insights into the market and identify business opportunities. 
 
@@ -13,9 +13,9 @@ The [data](http://insideairbnb.com/get-the-data/) is divided into 3 tables:
 * **listings** has 20k records and 75 fields
 * **reviews** has +500k records and 6 fields
 
-### Data Cleaning
+## Data Cleaning
 
-* #### Airbnb Listings
+* ### Airbnb Listings
 
     The following SQL query removes dollar signs and commas from a 'price' string and converts the result into a floating-point number for clean numerical calculations.
 
@@ -28,7 +28,7 @@ The [data](http://insideairbnb.com/get-the-data/) is divided into 3 tables:
 
     Projected Revenue = Nightly Price x Nights Booked
 
-* #### Airbnb Reviews
+* ### Airbnb Reviews
   
   This query identifies the top 20 Airbnb hosts with the most reviews mentioning "dirty", and the count of such reviews.
 
@@ -39,9 +39,9 @@ The [data](http://insideairbnb.com/get-the-data/) is divided into 3 tables:
     GROUP BY host_id,host_url, host_name order by num_dirty desc;
     ```
 
-### Findings
+## Findings
 
-#### 1. How much are the top AirBnB earners making in Cape Town?
+### 1. How much are the top AirBnB earners making in Cape Town?
 
 * **Pricing of Top Earners:** The top 30 earners on Airbnb in Cape Town command an average nightly rate of R120,972.97
 
@@ -49,6 +49,6 @@ The [data](http://insideairbnb.com/get-the-data/) is divided into 3 tables:
 
 * **Concentration by Location:** The analysis indicates a concentration of top-earning listings in specific areas. Ward 54 leads with 23 listings within the top 30 earners
 
-#### 2. Potential customer list for AirBnB cleaning business?
+### 2. Potential customer list for AirBnB cleaning business?
 
 * **Potential customer list:** The top 20 selected listings have an average of 9 reviews containing the word "dirty". This indicates a potential market demand for high-quality cleaning services among Airbnb hosts in Cape Town, who may be willing to outsource cleaning to maintain positive reviews and guest satisfaction.
